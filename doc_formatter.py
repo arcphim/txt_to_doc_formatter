@@ -105,8 +105,23 @@ class DocFormatter:
             para.paragraph_format.line_spacing_rule = 4  # WD_LINE_SPACING.FIXED
             para.paragraph_format.line_spacing = Pt(line_spacing)
             
-            # 设置正文段落对齐方式为左对齐
-            para.alignment = 0  # WD_ALIGN_PARAGRAPH.LEFT
+            # 设置段后间距为0磅
+            para.paragraph_format.space_after = Pt(0)
+            
+            # 取消孤行控制
+            para.paragraph_format.keep_together = False
+            para.paragraph_format.keep_with_next = False
+            
+            # 设置正文段落对齐方式
+            alignment = body_config.get('alignment', 'left')
+            if alignment == 'justify':
+                para.alignment = 3  # WD_ALIGN_PARAGRAPH.JUSTIFY
+            elif alignment == 'center':
+                para.alignment = 1  # WD_ALIGN_PARAGRAPH.CENTER
+            elif alignment == 'right':
+                para.alignment = 2  # WD_ALIGN_PARAGRAPH.RIGHT
+            else:
+                para.alignment = 0  # WD_ALIGN_PARAGRAPH.LEFT
             
             # 设置首行缩进为2个汉字宽度（与标题格式保持一致）
             para.paragraph_format.first_line_indent = Pt(14.4 * 2)
@@ -248,12 +263,8 @@ class DocFormatter:
         fld_char_end.set(qn('w:fldCharType'), 'end')
         run._element.append(fld_char_end)
         
-    logging.basicConfig(
-        filename='app.log',
-        level=logging.DEBUG,
-        format='%(asctime)s - %(levelname)s - %(message)s',
-        encoding='utf-8'  # 添加编码配置
-    )
+    # 禁用日志记录以避免生成app.log文件
+    logging.disable(logging.CRITICAL)
     
     def format_document(self, input_path, output_path):
         # 检查输入文件扩展名

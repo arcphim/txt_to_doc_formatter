@@ -1,0 +1,78 @@
+{
+    "title_font": {
+        "name": "方正小标宋_GBK",
+        "size": 18,
+        "alignment": "center",
+        "bold": false
+    },
+    "body_font": {
+        "name": "方正仿宋_GBK",
+        "size": 16,
+        "digit_font": "Times New Roman",
+        "alignment": "justify"
+    },
+    "output_dirs": {
+        "default_dirs": [
+            "D:"
+        ],
+        "current_dir": ""
+    },
+    "spacing": {
+        "line_spacing": 28,
+        "line_spacing_rule": "FIXED"
+    },
+    "margins": {
+        "top": 3.0,
+        "bottom": 3.0,
+        "left": 2.6,
+        "right": 2.6,
+        "unit": "cm"
+    },
+    "heading_levels": [
+        {
+            "level": 1,
+            "format": "一、",
+            "font": "方正黑体_GBK",
+            "size": 16,
+            "bold": false,
+            "indent": 2,
+            "punctuation": false,
+            "new_page": false,
+            "standalone_line": true
+        },
+        {
+            "level": 2,
+            "format": "（一）",
+            "font": "方正楷体_GBK",
+            "size": 16,
+            "bold": true,
+            "indent": 2,
+            "punctuation": false,
+            "standalone_line": true
+        },
+        {
+            "level": 3,
+            "format": "1. ",
+            "font": "方正仿宋_GBK",
+            "size": 16,
+            "bold": false,
+            "indent": 2,
+            "punctuation": true,
+            "standalone_line": true
+        },
+        {
+            "level": 4,
+            "format": "（1）",
+            "font": "方正仿宋_GBK",
+            "size": 16,
+            "bold": false,
+            "indent": 2,
+            "punctuation": true,
+            "standalone_line": false
+        }
+    ],
+    "page_number": {
+        "position": "bottom",
+        "alignment": "center"
+    }
+}
